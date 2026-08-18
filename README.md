@@ -4,13 +4,14 @@ Predicting a song's Spotify popularity score (0-100) from its audio features and
 
 ## Dataset
 
-114,000 tracks from Spotify, 21 columns including audio features (danceability, energy,
-loudness, acousticness, valence, tempo, etc.), genre, and a popularity score.
-Source: "Spotify Tracks Dataset" (Kaggle - maharshipandya).
+114k tracks from Spotify, 21 columns including audio features (danceability, energy,
+loudness, tempo, etc.), genre, and a popularity score.
+
+From: "Spotify Tracks Dataset" (Kaggle - maharshipandya).
 
 ## Question
 
-Can audio characteristics of a track predict how popular it is?
+Can audio characteristics of a song predict how popular it is?
 
 ## My Approach
 
