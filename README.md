@@ -37,22 +37,9 @@ Random forest roughly doubled R² over the linear baseline, confirming the EDA h
 the signal was there, just non-linear. Linear regression can't model feature interactions;
 random forest can.
 
-## Feature importance
+## Conclusion
 
-No single feature dominates, importances are clustered fairly evenly across ~10 audio
-features (duration, speechiness, acousticness, valence, tempo, danceability, loudness,
-energy, liveness, instrumentalness all in the 0.05-0.07 range). This means popularity is
-driven by combinations of weak signals, which is also why linear regression underperformed.
-
-Individual genre dummy variables rank lower in this list despite genre clearly mattering
-overall. This isn't a contradiction: genre's total effect is spread across ~114
-separate one-hot columns, so no single genre column looks important in isolation even
-though genre collectively matters a lot.
-
-R² of 0.527 is not a high one, and it likely reflects a genuine ceiling
-in the data rather than a modeling failure. Spotify popularity is driven heavily by things
-this dataset doesn't capture at all; artist fame, release recency, playlist placement,
-marketing. Audio features and genre explain part of the picture.
+No single feature dominated, importance spread evenly across ~10 audio features, which is why random forest beat linear regression. It's weak signals combining, not one strong lever. Genre's individual columns ranked lower too, but that's because its effect is spread across ~114 one-hot columns, not because genre stopped mattering. R² of 0.527 reflects a real ceiling, Spotify popularity depends heavily on things this dataset doesn't have at all (artist fame, playlist placement, marketing).
 
 ## Tools
 
