@@ -49,9 +49,7 @@ overall. This isn't a contradiction: genre's total effect is spread across ~114
 separate one-hot columns, so no single genre column looks important in isolation even
 though genre collectively matters a lot.
 
-## Honest limitations
-
-R² of 0.527 is a real result but not a high one, and it likely reflects a genuine ceiling
+R² of 0.527 is not a high one, and it likely reflects a genuine ceiling
 in the data rather than a modeling failure. Spotify popularity is driven heavily by things
 this dataset doesn't capture at all; artist fame, release recency, playlist placement,
 marketing. Audio features and genre explain part of the picture.
