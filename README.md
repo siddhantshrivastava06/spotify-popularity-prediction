@@ -28,7 +28,7 @@ Can audio characteristics of a track predict how popular it is?
 
 ## Results
 
-| Model             | RMSE  | MAE   | R²    |
+| Model             | RMSE (Root Mean Squared Error)  | MAE (Mean Absolute Error)  | R²    |
 |-------------------|-------|-------|-------|
 | Linear Regression | 19.12 | 14.09 | 0.259 |
 | Random Forest     | 15.28 | 10.32 | 0.527 |
