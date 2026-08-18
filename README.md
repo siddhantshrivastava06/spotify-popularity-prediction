@@ -12,18 +12,18 @@ Source: "Spotify Tracks Dataset" (Kaggle - maharshipandya).
 
 Can audio characteristics of a track predict how popular it is?
 
-## Approach
+## My Approach
 
-1. **EDA (Exploratory Data Analysis)** — checked missing values (negligible, 3 rows across metadata columns, dropped),
+1. **EDA (Exploratory Data Analysis)** - checked missing values (negligible, 3 rows across metadata columns, dropped),
    plotted the popularity distribution, and computed correlations between each audio
    feature and popularity.
-2. **Key finding from EDA** — every individual audio feature has near-zero linear
+2. **Key finding from EDA** - every individual audio feature has near-zero linear
    correlation with popularity (max |r| ≈ 0.10). Genre, however, has a large effect:
    average popularity ranges from 59 (pop-film) down to 2 across genres.
    This suggested the signal, if it existed, wasn't linear or wasn't in single features
    alone.
-3. **Baseline model** — linear regression on audio features + one-hot encoded genre.
-4. **Improved model** — random forest, to test whether the signal was there but non-linear
+3. **Baseline model** - linear regression on audio features + one-hot encoded genre.
+4. **Improved model** - random forest, to test whether the signal was there but non-linear
    (interactions between features) rather than absent.
 
 ## Results
