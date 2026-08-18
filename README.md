@@ -6,11 +6,7 @@ Predicting a song's Spotify popularity score (0-100) from its audio features and
 
 114,000 tracks from Spotify, 21 columns including audio features (danceability, energy,
 loudness, acousticness, valence, tempo, etc.), genre, and a popularity score.
-Source: "Spotify Tracks Dataset" (Kaggle).
-
-Note: ~14% of tracks (16,020) have a popularity score of 0. These were kept rather than
-dropped, since there's no evidence they're errors rather than genuinely obscure tracks —
-removing them would bias the model toward already-popular songs.
+Source: "Spotify Tracks Dataset" (Kaggle - maharshipandya).
 
 ## Question
 
@@ -18,12 +14,12 @@ Can audio characteristics of a track predict how popular it is?
 
 ## Approach
 
-1. **EDA** — checked missing values (negligible, 3 rows across metadata columns, dropped),
+1. **EDA (Exploratory Data Analysis)** — checked missing values (negligible, 3 rows across metadata columns, dropped),
    plotted the popularity distribution, and computed correlations between each audio
    feature and popularity.
 2. **Key finding from EDA** — every individual audio feature has near-zero linear
    correlation with popularity (max |r| ≈ 0.10). Genre, however, has a large effect:
-   average popularity ranges from ~59 (pop-film) down to ~2 (iranian) across genres.
+   average popularity ranges from 59 (pop-film) down to 2 across genres.
    This suggested the signal, if it existed, wasn't linear or wasn't in single features
    alone.
 3. **Baseline model** — linear regression on audio features + one-hot encoded genre.
@@ -43,14 +39,13 @@ random forest can.
 
 ## Feature importance
 
-No single feature dominates — importances are clustered fairly evenly across ~10 audio
+No single feature dominates, importances are clustered fairly evenly across ~10 audio
 features (duration, speechiness, acousticness, valence, tempo, danceability, loudness,
 energy, liveness, instrumentalness all in the 0.05-0.07 range). This means popularity is
-driven by combinations of weak signals, not one or two strong predictors, which is also
-why linear regression underperformed — it assumes additive, independent effects.
+driven by combinations of weak signals, which is also why linear regression underperformed.
 
 Individual genre dummy variables rank lower in this list despite genre clearly mattering
-overall (see EDA). This isn't a contradiction: genre's total effect is spread across ~114
+overall. This isn't a contradiction: genre's total effect is spread across ~114
 separate one-hot columns, so no single genre column looks important in isolation even
 though genre collectively matters a lot.
 
@@ -58,8 +53,8 @@ though genre collectively matters a lot.
 
 R² of 0.527 is a real result but not a high one, and it likely reflects a genuine ceiling
 in the data rather than a modeling failure. Spotify popularity is driven heavily by things
-this dataset doesn't capture at all — artist fame, release recency, playlist placement,
-marketing. Audio features and genre explain part of the picture, not the whole thing.
+this dataset doesn't capture at all; artist fame, release recency, playlist placement,
+marketing. Audio features and genre explain part of the picture.
 
 ## Tools
 
