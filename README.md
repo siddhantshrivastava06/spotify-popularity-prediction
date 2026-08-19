@@ -9,7 +9,7 @@ loudness, tempo, etc.), genre, and a popularity score.
 
 From: "Spotify Tracks Dataset" (Kaggle - maharshipandya).
 
-## Question
+## My Question
 
 Can audio characteristics of a song predict how popular it is?
 
@@ -20,8 +20,8 @@ Can audio characteristics of a song predict how popular it is?
 | Linear Regression | 19.12 | 14.09 | 0.259 |
 | Random Forest     | 15.28 | 10.32 | 0.527 |
 
-Random forest roughly doubled R² over the linear baseline, confirming the hypothesis:
-there was a non-linear correlation. 
+Random forest roughly doubled R² over linear regression. So there indeed is a correlation, just not a 
+linear one. 
 
 ## Conclusion
 
